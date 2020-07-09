@@ -253,7 +253,7 @@ border-radius: 0px 0px 4px 4px;
     
     
 }
-.social-link:hover, .social-link :focus {
+.social-link:hover, .social-link:focus {
     background-color: var(--accent-color);
     border-radius: 100px;
 }
@@ -364,6 +364,7 @@ border-radius: 0px 0px 4px 4px;
     border-color: var(--accent-color);
 }
     
+/* Подвал */
 
 .footer .social-icon {
     fill: white;
@@ -506,9 +507,7 @@ border-radius: 0px 0px 4px 4px;
     margin-top: 9px;
 }
 
-.column-one {
-    margin-right: 69px;
-}
+
 
 
 
@@ -562,9 +561,65 @@ margin-left: auto;
 color: rgba(255, 255, 255, 0.6);
 }
 
-.column {
+.column-two {
+  margin-right: 94px;  
+}
+
+.column-one {
     width: 231px;
     text-align: left;
+    margin-right: 69px;
+}
+.form {
+    
+    width: 358px;
+    height: 50px;
+    
+}
+.form-text {
+    font-family: Roboto;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: Left;
+    letter-spacing: 3%;
+    text-transform: uppercase;
+    color: var(--white-color);
+}
+
+.form-field {
+    position: relative;
+    
+  
+}
+.form-input {
+    width: 100%;
+    margin: 0;
+    padding: 18px 12px;
+    border-radius: 4px;
+    border-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.15); */
+    color: var(--white-color);
+}
+
+.form-label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+}
+
+.form-input:focus .form-label {
+    transform: translateY(-5px) translateX(-10px);
+}
+
+
+.form button {
+    padding: 10px 29px;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    color: var(--white-color);
+
 }
 
 .footer-contacts {
@@ -578,6 +633,9 @@ color: rgba(255, 255, 255, 0.6);
     flex-direction: column;
     justify-content: baseline;
 }
+
+
+/* Портфолио */
 
 .killer-margin {
     margin-top: 0;
