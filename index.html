@@ -48,7 +48,8 @@
     <div class="hero-bgc">
         <section class="hero content">
             <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <a class="button-link link" href="">Заказать услугу</a>
+            <button class="button-submit" data-modal-open>Заказать услугу</button>
+            <!-- <a class="button-link link" href="">Заказать услугу</a> -->
         </section>
     </div>    
 
@@ -231,6 +232,7 @@
                         </li>
                     </ul>
                 </li>
+                
             </ul>
         </section>
             
@@ -292,11 +294,11 @@
             
                 <form class="form">
                     <div class="form-field">
-                    <p class="form-text">Подпишитесь на рассылку</p>
-                    
-                        <input type="email" class="form-input" name="email" id="email">
-                        <label for="email" class="form-label">e-mail</label>
-                        <button type="submit">Подписаться</button>
+                        <p class="form-text">Подпишитесь на рассылку</p>
+                            <div class="form-position">
+                                <input type="email" placeholder="E-mail" class="form-input" name="email" id="email">
+                                <button class="form-button" type="submit">Подписаться <svg class="button-icon"><use href="./img/symbol-defs-3.svg#icon-fly"></use></svg> </button>
+                            </div>
                     </div>
                 </form>
 
@@ -305,5 +307,69 @@
               <div class="content dev_border"><p class="developed">2020 | Developed by GoIT Students </p></div>
       
     </footer>
+    <!-- <button data-modal-open>open modal</button> -->
+    <div class="backdrop is-hidden"data-modal>
+        <div class="modal">
+            <div class="modal-title">
+                <b>Оставьте свои данные, мы вам перезвоним</b>
+            </div>
+            <div class="modal-fild">
+                <input class="modal-input" placeholder=" " type="text" name="name" id="name">
+                <label class="modal-label" for="name">Имя</label>
+                <svg class="modal-icon"><use href="./img/symbol-defs-3.svg#icon-name-icon"></use></svg>
+            </div> 
+            <div class="modal-fild"> 
+                <input class="modal-input" placeholder=" " type="tel" name="tel" id="tel">
+                <label class="modal-label" for="tel">Телефон</label>
+                <span class="tel-icon"></span>
+                <svg class="modal-icon"><use href="./img/symbol-defs-3.svg#icon-tel-icon"></use></svg>
+            </div>
+            <div class="modal-fild">
+                <input class="modal-input" placeholder=" " type="email" name="email" id="email">
+                <label class="modal-label" for="email">Почта</label>
+                <svg class="modal-icon"><use href="./img/symbol-defs-3.svg#icon-email-icon"></use></svg>
+            </div>
+            <div class="modal-comment">
+                <textarea class="modal-textarea" placeholder=" " name="comment" id="comment" rows="10"></textarea>
+                <label class="comment-label" for="comment">Комментарий</label>
+            </div>
+            <div class="checkbox-fild">
+                 <input type="checkbox" class="checkbox" required name="agree" id="agree">
+                <label class="checkbox-label" for="agree">соглашаюсь с рассылкой и принимаю <a class="agree-link" href="">Условия договора</a></label>
+            </div>
+          <button class="button-close" data-modal-close></button> 
+          <button class="button-submit" type="submit">отправить</button>
+        </div>
+
+    </div>
+    <script>
+        (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(${name}: ${value}),
+            );
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
+    <script>
+        (() => {
+  const refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+  };
+
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();
+    </script>
 </body>
 </html>
