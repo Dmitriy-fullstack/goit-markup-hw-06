@@ -792,6 +792,7 @@ color: rgba(255, 255, 255, 0.6);
 
 .agree-link {
     color: var(--accent-color);
+    margin-left: 5px;
     
 }
 
